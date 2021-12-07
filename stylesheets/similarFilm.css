@@ -1,0 +1,22 @@
+.similarFilm {
+flex: 1;
+margin-right: 1%;
+margin-top: 2%;
+}
+
+.similarFilm img {
+    /* flex: 1; */
+    width: 170pt;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 0.01px;
+}
+
+/* #similarFilmTitleId {
+    font-family: 'Outfit', sans-serif;
+    color: #fff;
+    font-weight: 500;
+    max-width: fit-content;
+} */
+
+

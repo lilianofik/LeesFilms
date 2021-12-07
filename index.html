@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="stylesheets/homepage.css">
+        <link rel="stylesheet" href="stylesheets/recEngine.css"> <!-- Read User Preferences for a Movie -->
+        <link rel="stylesheet" href="stylesheets/fonts.css">
+        <link rel="stylesheet" href="stylesheets/filmDetails.css"> <!-- Style individual film elements -->
+        <link rel="stylesheet" href="stylesheets/similarFilm.css"> <!-- Style similar film elements -->
+        <link rel="stylesheet" href="stylesheets/ratingsNreviews.css"> <!-- Style ratings and review elements -->
+        <link rel="stylesheet" href="stylesheets/nowPlayingMovies.css"> <!-- Style Now Playing Movie elements -->
+        <link rel="stylesheet" href="stylesheets/topRatedMovies.css"> <!-- Style Top Rated Movie elements -->
+        <link rel="stylesheet" href="stylesheets/PopularMovies.css"> <!-- Style Popular Movie elements -->
+        <link rel="stylesheet" href="stylesheets/userCollection.css"> <!-- Style User Col elements -->
+
+        <script src="scripts/main.js"></script>
+        <script src="scripts/recEngine.js"></script> <!-- Specific JS for search engine -->
+        <script src="scripts/fetchMovie.js"></script> <!-- Fetch Movie -->
+        <script src="scripts/retrieveFilmDetails.js"></script> <!-- Fetch Movie Details -->
+        <script src="scripts/retrieveSimilarMovies.js"></script> <!-- Fetch Movie Details -->
+        <script src="scripts/retrieveNowPlayingMovies.js"></script> <!-- Fetch Now Playing Movies -->
+        <script src="scripts/retrieveTopRatedMovies.js"></script> <!-- Fetch Top Rated Movies -->
+        <script src="scripts/retrievePopularMovies.js"></script> <!-- Fetch Popular Movies -->
+        <script src="scripts/rateMovie.js"></script> <!-- Rate Movie -->
+        <script src="scripts/loadUserFilmCollection.js"></script> <!-- Load User Info -->
+        <script src="scripts/firebase.mjs" type="module"></script>
+
+        
+    </head>
+
+    <body>
+
+        <div class ="main">
+
+            <nav>
+
+                <div class="logoImage">
+                        <img src="imagesUsed/newLogo.png" alt="Main Logo" id="logo">
+                        <h1>Lee'sFilms</h1>
+                    
+                </div>
+     
+                <div class="nav-links">
+
+                    <ul>
+                        <li><a href="#" id="goToRec">Rec Engine</a></li>
+                        <li><a href="#" id="homeBtn">My Collection</a></li>
+                        <li><a href="#" id="NowPlayingLink">Now Playing</a></li>
+                        <li><a href="#" id="PopularMoviesLink">Popular Movies</a></li>
+                        <li><a href="#" id="TopRatedMoviesLink">Top Rated Movies</a></li>
+                        <li><a href="#" id="signOut" style="display: none;">Sign Out</a></li>
+                        <!-- <li><div class="menuBtn">
+                            <div class="menuBtnBurger"></div>
+                        </div></li> -->
+                    </ul>
+
+                    
+                    
+                </div>
+    
+            </nav>
+
+            <div class = "WelcomeContent">
+
+                    <div id = "circle">
+
+                        <div class="prompt">
+                            <h1>Need Something to Watch ? </h1>
+
+                            <p>Let's work together then .</p>
+
+                            <div class="loginOptions">
+                                <button type="submit" id="loginBtn"> Login </button>
+                                <button type="submit" id="signUpBtn"> Sign Up </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="selections"> 
+
+                        <div class="loginForm" style="display: none;">
+
+                            <h1>Login</h1>
+
+                            <div class="formMain">
+                                <form>
+
+                                    <span>
+                                        <input type="email" id="loginEmail" placeholder="Email"><br>
+                                    </span>
+
+                                    <span>
+                                        <input type="password" id="loginPswd" placeholder="Password"><br>
+                                        <span id="wrongPassword" style="display: none;"><p> Invalid Email/Password </p></span>
+                                    </span>
+
+                                    <div class="error"></div>
+
+                                    <button type="submit" id="loginFormSubmit">Login</button>
+
+                                </form>
+
+                            </div>    
+
+                        </div>
+
+                        <div class="signUpForm" style="display: none;">
+
+                            <h1>Sign Up</h1>
+
+                            <div class="formMain">
+                                <form>
+
+                                    <!-- <span class="flexNameInput">
+                                        <input type="text" id="FirstName" placeholder="First Name">
+                                    
+                                        <input type="text" id="LastName" placeholder="Last Name">
+                                    </span> -->
+
+                                    <span>
+                                        <input type="email" id="signUpEmail" placeholder="Email"><br>
+                                        <span id="reusedEmail" style="display: none;"><p> Email is already in use </p></span>
+                                    </span>
+
+                                    <span>
+                                        <input type="password" id="signUpPswd" placeholder="Password"><br>
+                                        <span id="badPswdSignUp" style="display: none;"><p> Password must be 6 or more characters </p></span>
+                                    </span>
+
+                                    <div class="error"></div>
+
+                                    <button type="submit" id="signUpFormSubmit">Sign Up</button>
+
+                                </form>
+
+                            </div>    
+
+                        </div>
+
+                    </div>
+
+            </div>
+
+            <div class="Home" style="display: none;">
+
+                <h1>Saved Films</h1>
+                <div class="userFilmCol"></div>
+
+                <h1>Saved Reviews</h1>
+                <div class="userReviews"></div>
+
+                <h1>Saved User Ratings</h1>
+                <div class="userRatings"></div>
+            </div>
+
+            <div class="recommendationsEngine">
+
+                <!-- <h1 class="displayName"></h1> -->
+
+                <div class="searchEngine" style="display: none;">
+
+                    <h1>Answer Some Questions , Let's Pick a Movie</h1>
+    
+                    <button type="submit" id="startEngineBtn">BEGIN</button>
+                </div>
+    
+                <div class="genreOptions" style="display: none;">
+                    
+                    <h1>Select the Genre you are Interested in.</h1>
+                        <P>Select as many as you would like (3 preferred) </P>
+                        <div id='scroll'><ul class="genreList"></ul></div>
+
+                        <button type="submit" id="backBtnGenre" style="opacity: 50%;pointer-events: none;">Back</button>
+                        <button type="submit" id="nextBtnGenre" style="opacity: 50%;pointer-events: none;">Next</button> 
+                </div>
+
+                <div class="yearOptions" style="display: none;">
+
+                    <h1>Select a Date Range</h1>
+                        <p>You may select one option only.</p>
+                    <ul class="listOfYears">
+
+                        <li id="surpriseDateRange">Surprise Me</li>
+                        <li id="last2years">Published in 2020 or 2021</li>
+                        <li id="last3years">Published in the last 3 years</li>
+                        <li id="last5years">Published in the last 5 years</li>
+                        <li id="last10years">Published in the last 10 years</li>
+                        <li id="last20years">Published in the last 20 years</li>
+                    </ul>
+
+                    <button type="submit" id="backBtnYears" style="opacity: 50%;pointer-events: none;">Back</button>
+                    <button type="submit" id="nextBtnYears" style="opacity: 50%;pointer-events: none;">Next</button> 
+
+                    <div class='notAvail' style="display: none;"><p>No recs available for your selections at the moment, <a id='restartRec'>try an alternative ?</a></p></div>
+
+                </div>
+
+            </div>
+
+            <div class="recommendedFilm" style="display: none;">
+
+                <h1>Your Recommendation Today</h1>
+
+                <div class="filmDetails">
+                    <img id="poster">
+
+                    <div class="flexRight">
+                        <div class="filmHeading">
+                            <h2 id="filmTitle"></h2>
+                            <h3 id="rating"></h3>
+                            <h3 id="saveMovie"> Save This Movie? </h3>
+
+                        </div>
+
+                            <div class="baseInfo">
+                                <p id="releaseYear"></p>
+                                <p id="filmDuration"></p>
+                            </div>
+
+        
+                            <ul class = "slidingNav">
+                            
+                                <li><a href="#" id="overviewLink">Overview</a></li>
+                                <li><a href="#" id="moreLikeThis">More Like This</a></li>
+                            </ul>
+
+                    <div class="overviewDiv">
+                        <p id="overview"></p>
+                        <p id="genreNames"></p> 
+
+                        <div class="genreNames">Genre
+                            <p id="flexGenre">Genre</p>
+
+                        </div>
+
+                        <div class="ratingSection">  
+
+                            <h2>Rate Movie ?</h2>
+
+                            <div class="stars">
+                                <a><img src="imagesUsed/Star_Emoji_grande.png"> </a>
+                                <a><img src="imagesUsed/Star_Emoji_grande.png"> </a>
+                                <a><img src="imagesUsed/Star_Emoji_grande.png"> </a>
+                                <a><img src="imagesUsed/Star_Emoji_grande.png"> </a>
+                                <a><img src="imagesUsed/Star_Emoji_grande.png"> </a>
+                            </div>
+
+                        </div>  
+
+                    </div>
+
+                    <div class="reviewBox">
+
+                        <h2>Leave a Review</h2>
+
+                        <form>
+                            <textarea name="" id="newReview" cols="30" rows="3"></textarea>
+
+                            <button type="submit" id="reviewFormSubmit">Submit</button>
+
+                        </form>
+
+                    </div>
+
+                    <a id="returnToRecEngine"> Need another rec? Click here! </a>
+
+                    <div class="similarMoviesDiv">
+
+
+                    </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            
+            <div class="NowPlayingMoviesDiv"></div>
+
+            <div class="PopularMoviesDiv"></div>
+
+            <div class="TopRatedMoviesDiv"></div>
+            
+
+        </div>
+
+    </body>
+
+</html>

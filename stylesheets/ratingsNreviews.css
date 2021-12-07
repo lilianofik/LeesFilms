@@ -1,0 +1,85 @@
+
+.ratingSection h2 {
+    font-family: 'Road Rage', cursive;
+    font-size: 30pt;
+    color: #fff;
+    margin-bottom: 1%;
+}
+
+.stars {
+    display: flex;  
+    margin-right: 75%;
+}
+
+.stars a img {
+    width: 25pt;
+}
+
+.stars a {
+    opacity: 50%;
+    cursor: pointer;
+    flex:0.015;
+}
+
+.stars a:hover{
+    opacity: 100%;
+}
+
+.stars:hover a{
+    opacity: 100%;
+}
+
+.stars a:hover ~ a {
+    opacity: 50%; 
+    
+}
+
+.stars a.active {
+    opacity: 100%; 
+}  
+
+/* .disabled {
+    pointer-events: none;
+} */
+
+#newReview {
+    width: 50%;
+    height: 100pt;
+    padding: 3% 4%;
+    margin-bottom: 5%;
+    border-radius: 5pt;
+    border: 1pt solid #000;
+    font-family: 'Francois One';
+    font-size: 13pt;
+}
+
+#newReview:focus {
+    border: 1px solid #fff;
+    outline: 0;
+}
+
+.reviewBox button {
+    border: 0;
+    padding: 1% 2%;
+    background: white;
+    font-size: 20pt;
+    font-family: 'Road Rage', cursive;
+    border-radius: 5px;
+    color: #000;
+    margin-left: -10%;
+}
+
+.reviewBox button:hover {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.reviewBox h2 {
+    font-family: 'Road Rage', cursive;
+    color: #fff;
+    font-size: 30pt;
+    text-shadow: 2px 2px 2px black;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}

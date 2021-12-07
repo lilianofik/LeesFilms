@@ -1,0 +1,412 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.main {
+    overflow: hidden; 
+    max-width: 100%;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(0.25turn, #000000, #6e0808, #000000);
+}
+
+nav {
+    width: 95%;
+    max-width: 100%;
+    position: sticky;
+    margin: 1% auto;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    overflow: hidden; 
+    justify-content: space-between;
+    box-shadow: 0.1em .4em rgba(0, 0, 0, 0.1);
+}
+
+.menuBtn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    border: 3px solid #fff;
+}
+
+.menuBtnBurger {
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+    transition: all .5s ease-in-out;
+}
+
+.open .menuBtnBurger {
+
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+
+.open .menuBtnBurger::before {
+
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+.open .menuBtnBurger::after {
+
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.menuBtnBurger::before,
+.menuBtnBurger::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+    transition: all .5s ease-in-out;
+}
+
+.menuBtnBurger::before {
+    transform: translateY(-16px);
+}
+
+.menuBtnBurger::after {
+    transform: translateY(16px);
+}
+
+
+.logoImage {
+    flex-basis: 20%;
+    display: flex;
+    cursor: pointer;
+}
+
+.logoImage h1 {
+    font-size: 150%;
+    margin-left: 1%;
+    margin-top: 10%;
+    color: white;
+    font-family: 'Francois One', sans-serif;
+    text-decoration: none;
+}
+
+.logoImage #logo {
+    margin-top: -4%;  /* Position the navbar at the top of the page */
+    margin-left: 4%; /* Full width */
+    width: 40%;
+    max-width: 100%;
+  }
+
+  .nav-links {
+      flex: 1;
+      text-align: right;
+  }
+
+  .nav-links ul li {
+      list-style-type: none;
+      display: inline-block;
+      margin: 0 1.2%;
+  }
+
+  .nav-links ul li a{
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Francois One', sans-serif;
+  }
+
+  .WelcomeContent {
+    width: 1000px;
+    height: 1000px;
+    max-width: 100%;
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    transform: translateY(-50%);
+}
+
+#circle {
+  width: 1000px;
+  height: 1000px;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+  ), url('../imagesUsed/backgroundHomePage.jpeg');
+}
+
+#circle .prompt h1 {
+      color: #fff;
+      margin-top: 40%;
+      text-align: center;
+      font-family: 'Amatic SC', cursive;
+      font-size: 3em;
+      font-weight: bolder;
+      text-shadow: red 0 -1px;
+  }
+
+#circle .prompt p {
+      color: #fff;
+      text-align: center;
+      line-height: 3;
+      font-family: 'Amatic SC', cursive;
+      font-size: 2em;
+      font-weight: bolder;
+      text-shadow: red 0 -1px;
+  }
+
+  .loginOptions {
+    max-width: 100%;
+    width: 100%;  
+    text-align: center;
+    margin-top: 3%;
+    margin-left: 7%;
+  }
+
+  .loginOptions button {
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  color: black;
+  font-size: 1em;
+  padding: 16px 35px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  border: 2px solid black;
+  font-family: 'Francois One', sans-serif;
+}
+
+/* .flexNameInput {
+    display: flex;
+}
+
+.flexNameInput input {
+    width: 5pt;
+}
+
+#FirstName {
+    width: 38%;
+    background-color: #fff;
+    margin-left: 10%;
+}
+
+#FirstName:hover {
+
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+#LastName {
+    width: 39%;
+    margin-left: 2%;
+} */
+
+.loginOptions #loginBtn {
+    margin-right: 2%;
+}
+
+.loginOptions #signUpBtn {
+    margin-left: 2%;
+}
+
+.loginOptions button:hover {
+  background-color: #6e0808;
+  color: white;
+}
+
+  .selections {
+      max-width: 100%;
+      position: absolute;
+      right: -45%;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  .selections h1 {
+      
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 10%;
+    color: #fff;
+    font-family: 'Francois One', sans-serif;
+}
+
+.loginForm {
+    width: 380px;
+    border-radius: 25px;
+    max-width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding-top: 65px;
+    box-shadow: 0 0 10px #000;
+}
+
+.loginForm .formMain {
+    text-align: center;
+}
+
+.loginForm .formMain input {
+
+    width: 300px;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 40px;
+    font-family: 'Francois One', sans-serif;
+}
+
+.loginForm .formMain button {
+
+    width: 300px;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding-left: 0;
+    box-sizing: border-box;
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-family: 'Francois One', sans-serif;
+}
+
+.loginForm .formMain button:hover {
+
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.loginForm .formMain input:hover {
+
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+.loginForm .formMain span {
+    position: relative;
+}
+
+.signUpForm {
+    width: 380px;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding-top: 65px;
+    box-shadow: 0 0 10px #000;
+}
+
+
+.signUpForm .formMain {
+    text-align: center;
+}
+
+.signUpForm .formMain input {
+
+    width: 300px;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 40px;
+    font-family: 'Francois One', sans-serif;
+}
+
+.signUpForm .formMain button {
+
+    width: 300px;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding-left: 0;
+    box-sizing: border-box;
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-family: 'Francois One', sans-serif;
+}
+
+.signUpForm .formMain button:hover {
+
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.signUpForm .formMain input:hover {
+
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+.loginForm .formMain span {
+    position: relative;
+}
+
+#badPswdSignUp p {
+    font-family: 'Francois One', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    color: white;
+    margin-top: -30px;
+    margin-bottom: 10px;
+}
+
+#reusedEmail p {
+    font-family: 'Francois One', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    color: white;
+    margin-top: -20pt;
+    margin-bottom: 10pt;
+}
+
+#wrongPassword p {
+    font-family: 'Francois One', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    color: white;
+    margin-top: -20pt;
+    margin-bottom: 10pt;
+}
+
+#restartRec {
+    font-family: 'Francois One', sans-serif;
+    font-size: 15px;
+    color: darkgoldenrod;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+

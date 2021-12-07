@@ -1,0 +1,92 @@
+.Home {
+    max-height: 80%;
+    max-width: 100%;
+    overflow: auto;
+}
+
+.Home h1{
+    font-family: 'Road Rage', cursive;
+    font-size: 35pt;
+    text-shadow: 2px 2px 2px black;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1%;
+}
+
+.userFilmCol {
+    display: grid;
+    margin-top: 3%;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-gap: 40px 0;
+    margin-left: 6%;
+}
+
+.userFilmColPosterId {
+    width: 150pt;
+    height: 210pt;
+    border-radius: 10pt;
+}
+
+.userReviews {
+    margin-left: 15%;
+}
+
+.userRatings {
+    margin-left: 15%;
+}
+
+
+#userReview {
+    font-family: 'Francois One', sans-serif;
+    color: #fff;
+    margin-bottom: 2%;
+    border: solid;
+    border-radius: 15pt;
+    border-color:#fff;
+    padding: 0.8% 1%;
+    flex: 0.8;
+    text-align: center;
+}
+
+#userRating {
+    font-family: 'Francois One', sans-serif;
+    color: #fff;
+    margin-bottom: 2%;
+    border: solid;
+    border-radius: 15pt;
+    padding: 0.8% 1%;
+    flex: 0.8;
+    text-align: center;
+}
+
+.trashUserElement {
+    max-width: 15%;
+    max-height: 10%;
+    cursor: pointer;
+}
+
+.savedFilmDiv {
+    display: flex;
+    align-items: flex-end;
+}
+
+.savedReviewDiv {
+    display: flex;
+    align-items: center;
+}
+
+.savedReviewDiv .trashUserElement {
+    max-width: 2%;
+    cursor: pointer;
+}
+
+
+.savedRatingsDiv {
+    display: flex;
+    align-items: center;
+}
+
+.savedRatingsDiv .trashUserElement {
+    max-width: 2%;
+    cursor: pointer;
+}

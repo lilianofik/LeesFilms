@@ -1,0 +1,177 @@
+.recommendedFilm {
+    max-width: 100%;
+}
+
+.recommendedFilm h1 {
+
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+    font-size: 35pt;
+    text-shadow: 2px 2px 2px black;
+}
+
+.filmDetails {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 1%;
+}
+
+.filmDetails p {
+
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+    font-size: 18pt;
+    margin: 2% 0;
+    text-align: justify;
+    text-shadow: 2px 2px 2px black;
+}
+
+.filmDetails #poster {
+    max-width: 20%;
+    min-width: none;
+    margin-right: 1%;
+    margin-left: 8%;
+    margin-bottom: 11%;
+    border-radius: 20px;
+}
+
+.flexRight {
+    height: 600px;
+    flex: 1;
+    overflow-y: scroll;
+    margin-left: 1%;
+    margin-right: 3%;
+}   
+
+.filmHeading {
+    display:flex;
+    align-items: center;
+}
+
+.filmHeading h2 {
+
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+    font-size: 30pt;
+    margin: 2% 0;
+    text-shadow: 2px 2px 2px black;
+    flex: 0.5;
+}
+
+.filmHeading h3 {
+
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+    font-size: 25pt;
+    text-shadow: 2px 2px 2px black;
+    flex: 0.3;
+}
+
+#saveMovie {
+    cursor: pointer;
+    color: #2721d9;
+}
+
+.baseInfo {
+    display: flex;
+    align-items: center;
+    margin-top: -4%;
+}
+
+#releaseYear {
+    flex: 0.06;
+    border-right-style: solid;
+    border-width: thin;
+    border-color: white;
+    margin: 2% 0;
+}
+
+#releaseYear p {
+    font-family: 'Bebas Neue', cursive;
+    color: #6e6e6e;
+    font-size: 15pt;
+    text-shadow: 2px 2px 2px black;
+    text-align: justify;
+    opacity: 70%;
+}
+
+#filmDuration {
+    margin-left: 2%;
+
+}
+
+
+#filmDuration p {
+    font-family: 'Bebas Neue';
+    color: #6e6e6e;
+    font-size: 15pt;
+    text-align: justify;
+    text-shadow: 2px 2px 2px black;
+    opacity: 70%;
+}
+
+.marker {
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #000;
+    bottom: -8px;
+    transition: 0.5s;
+    border-radius: 4px;
+}
+
+.slidingNav {
+    display: flex;
+    margin-left: -1.1%;
+}
+
+.slidingNav li {
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 1.5%;
+    padding-right: 14%;
+}
+
+.slidingNav li a{
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18pt;
+    font-family: 'Francois One', sans-serif;
+}
+
+#moreLikeThis {
+    color: #6e6e6e;
+    opacity: 0.5;
+}
+
+#overview p {
+    font-family: 'Bebas Neue';
+    color: white;
+    font-size: 20pt;
+    margin: 2% 0;
+    text-align: justify;
+    text-shadow: 2px 2px 2px black;
+}
+
+.genreNames {
+    color: #6e6e6e;
+    opacity: 60%;
+    align-items: center;
+    font-family: 'Bebas Neue';
+    font-size: 15pt;
+    text-align: justify;
+    text-shadow: 2px 2px 2px black;
+    margin-bottom: 1%;
+}
+
+#returnToRecEngine {
+    font-family: 'Road Rage', cursive;
+    color: #f59d22;
+    text-shadow: 2px 2px 2px black;
+    margin-bottom: 4%;
+    font-size: 32pt;
+    cursor: pointer;
+}

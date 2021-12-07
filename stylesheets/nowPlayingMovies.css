@@ -1,0 +1,25 @@
+.NowPlayingMoviesDiv {
+
+    display: grid;
+    margin-left: 7%;
+    margin-top: 3%;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-gap: 40px 0;
+    overflow: auto;
+    max-height:80%;
+    max-width: 100%;
+}
+
+.nowPlayingHeading h1 {
+    font-family: 'Road Rage', cursive;
+    font-size: 30pt;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 1%;
+}
+
+#nowPlayingPosterId {
+    width: 150pt;
+    border-radius: 10pt;
+}
+
